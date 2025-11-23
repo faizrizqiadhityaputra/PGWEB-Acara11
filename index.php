@@ -83,9 +83,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <script>
-      // ===============================
       // MAP DASAR
-      // ===============================
       var map = L.map("map").setView([-7.732521, 110.402376], 11);
 
       var osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -93,9 +91,7 @@
         attribution: "© OpenStreetMap contributors",
       }).addTo(map);
 
-      // ===============================
       // LAYER WMS DARI GEOSERVER
-      // ===============================
 
       // 1. ADMINISTRASIDESA_AR_25K
       var desa = L.tileLayer.wms(
@@ -146,9 +142,7 @@
         }
       ).addTo(map);
 
-      // ===============================
       // LAYER CONTROL
-      // ===============================
       var baseLayers = {
         "OpenStreetMap": osm
       };
@@ -163,9 +157,7 @@
 
       L.control.layers(baseLayers, overlayLayers).addTo(map);
 
-      // ===============================
       // LEGEND
-      // ===============================
       const layerInfo = {
         "Administrasi Desa (AR_25K)": {
             url: "http://localhost:8080/geoserver/pgweb10/wms",
